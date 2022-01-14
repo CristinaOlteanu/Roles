@@ -1,0 +1,27 @@
+cases/write:      soc-analyst
+events/read:      soc-analyst
+events/write:     soc-analyst
+events/ack:       soc-analyst
+jobs/read:        soc-analyst
+jobs/pivot:       soc-analyst
+jobs/write:       soc-analyst
+nodes/read:       soc-analyst
+
+soc-analyst:      use-cases-member
+
+use-cases-member: use-cases-lead
+jobs/delete:      use-cases-lead
+
+soc-analyst:      infrastructure-member
+
+infrastructure-member:	infrastructure-lead
+jobs/delete:      		infrastructure-lead
+roles/read:       		infrastructure-lead
+roles/write:      		infrastructure-lead
+users/read:       		infrastructure-lead
+users/write:      		infrastructure-lead
+users/delete:     		infrastructure-lead
+
+
+
+
