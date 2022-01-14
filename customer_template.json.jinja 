@@ -1,0 +1,44 @@
+{
+    "cluster": [],
+    "indices": [
+      {% if grains.id.split(‘_’) | last == ‘managersearch’ %}
+      {
+        "names": ["so-*"],
+        "privileges": ["read_cross_cluster"]
+      }
+      {% endif %}
+      {% if grains.id is match(storage) %}
+      {
+        "names": ["so-*"],
+        "privileges": [
+          "monitor",
+          "read",
+          "read_cross_cluster",
+          "view_index_metadata"
+        ]
+      }
+      {% endif %}
+    ],
+    "applications": [
+      {
+        "application": "kibana-.kibana",
+        "privileges": [
+          "feature_discover.read",
+          "feature_dashboard.read",
+          "feature_canvas.read",
+          "feature_maps.read",
+          "feature_ml.read",
+          "feature_logs.read",
+          "feature_visualize.read",
+          "feature_infrastructure.read",
+          "feature_apm.read",
+          "feature_uptime.read",
+          "feature_siem.read"
+        ],
+        "resources": [
+          "*"
+        ]
+      }
+    ],
+    "run_as": []
+  }

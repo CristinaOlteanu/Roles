@@ -1,0 +1,55 @@
+{
+  "cluster": [
+    "cancel_task",
+    "monitor",
+    "monitor_ml",
+    "monitor_rollup",
+    "monitor_snapshot",
+    "monitor_text_structure",
+    "monitor_transform",
+    "monitor_watcher",
+    "read_ccr",
+    "read_ilm",
+    "read_pipeline",
+    "read_slm"
+  ],
+  "indices": [
+    {
+      "names": [
+        "so-*"
+      ],
+      "privileges": [
+        "maintenance",
+        "monitor",
+        "read",
+        "read_cross_cluster",
+        "view_index_metadata"
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "application": "kibana-.kibana",
+      "privileges": [
+        "feature_discover.all",
+        "feature_dashboard.read",
+        "feature_canvas.read",
+        "feature_maps.read",
+        "feature_ml.read",
+        "feature_logs.read",
+        "feature_visualize.all",
+        "feature_infrastructure.read",
+        "feature_apm.read",
+        "feature_uptime.read",
+        "feature_siem.read",
+        "feature_fleet.read",
+        "feature_actions.read",
+        "feature_stackAlerts.read"
+      ],
+      "resources": [
+        "*"
+      ]
+    }
+  ],
+  "run_as": []
+}
